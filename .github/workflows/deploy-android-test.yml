@@ -34,12 +34,12 @@ jobs:
           expo-version: latest
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
-          
-      - name: Generated eas.json
-        run: eas init
         
       - name: 📦 Install dependencies
         run: npm install
+          
+      - name: Generated eas.json
+        run: eas init
 
       - name: 🚀 Build app
         run: eas build --non-interactive --platform=all
