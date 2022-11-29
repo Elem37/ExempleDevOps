@@ -37,8 +37,8 @@ jobs:
       - name: 📦 Install dependencies
         run: npm install
 
-      - name: 🚀 Publish app
-        run: expo publish --non-interactive
+      - name: 🚀 Build app
+        run: eas build --non-interactive
 
       - name: Upload to App Center
         uses: wzieba/AppCenter-Github-Action@v1
