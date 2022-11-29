@@ -37,12 +37,9 @@ jobs:
         
       - name: 📦 Install dependencies
         run: npm install
-          
-      - name: Generated eas.json
-        run: eas init
 
       - name: 🚀 Build app
-        run: eas build --non-interactive --platform=all
+        run: eas build --non-interactive --platform=android
 
       - name: Upload to App Center
         uses: wzieba/AppCenter-Github-Action@v1
