@@ -35,7 +35,7 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
         
-      - name: 📦 Install dependencies
+      - name: 📦 Install dependencie
         run: npm install
 
       - name: 🚀 Build app
