@@ -5,13 +5,7 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-    
-env:
-  APP_CENTER_TOKEN: ${{ secrets.TOKEN_ENV_TEST  }}  
-  APP_NAME: ${{ 'ExempleMobileDevOps/ENV_TEST'  }}  
-  TESTING_GROUP: ${{  'ENV_TEST'  }} 
-  UPLOAD_FILE: ${{ 'android/app/build/outputs/apk/app-release.apk'  }}  
-  
+
 
 jobs:
   build:
@@ -40,13 +34,3 @@ jobs:
 
       - name: 🚀 Build app
         run: eas build --non-interactive --platform=android
-
-      - name: Upload to App Center
-        uses: wzieba/AppCenter-Github-Action@v1
-        with:
-          appName: ${{ env.APP_NAME }}
-          token: ${{ env.APP_CENTER_TOKEN }}
-          group: ${{ env.TESTING_GROUP }}
-          file: ${{ env.UPLOAD_FILE }}
-          notifyTesters: true
-          debug: false
